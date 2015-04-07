@@ -1,0 +1,50 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../Content/Poker.css" />
+    <title>Poker</title>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <h2>Poker-O-Matic 3000</h2>
+        </div>
+        <div id="play">
+            <label>Player 1 Name:</label>
+            <input type="text" id="p1" size="10" />
+            <div>
+                <label>Enter cards for player 1:</label>
+            </div>
+            <div id="p1cards">
+                <input type="text" id="p1c1" size="4" maxlength="3" />
+                <input type="text" id="p1c2" size="4" maxlength="3" />
+                <input type="text" id="p1c3" size="4" maxlength="3" />
+                <input type="text" id="p1c4" size="4" maxlength="3" />
+                <input type="text" id="p1c5" size="4" maxlength="3" />
+            </div>
+        </div>
+        <br />
+        <div>
+            <label>Player 2 Name:</label>
+            <input type="text" id="p2" size="10" />
+            <div>
+                <label>Enter cards for player 2:</label>
+            </div>
+            <div id="p2cards">
+                <input type="text" id="p2c1" size="4" maxlength="3" />
+                <input type="text" id="p2c2" size="4" maxlength="3" />
+                <input type="text" id="p2c3" size="4" maxlength="3" />
+                <input type="text" id="p2c4" size="4" maxlength="3" />
+                <input type="text" id="p2c5" size="4" maxlength="3" />
+            </div>
+        </div>
+        <br />
+        <div>
+            <input type="submit" onclick="submit()" value="Who wins?" />
+            <p id="winner" />
+        </div>
+    </div>
+    <script src="../Scripts/app.js"></script>
+</body>
+</html>
