@@ -1,7 +1,8 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
 <head>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="../../Content/Poker.css" />
     <title>Poker</title>
 </head>
@@ -12,7 +13,7 @@
         </div>
         <div id="play">
             <label>Player 1 Name:</label>
-            <input type="text" id="p1" size="10" />
+            <input type="text" data-bind="value: player1Name" id="p1" size="10" />
             <div>
                 <label>Enter cards for player 1:</label>
             </div>
@@ -41,10 +42,8 @@
         </div>
         <br />
         <div>
-            <input type="submit" onclick="submit()" value="Who wins?" />
+            <input type="submit" data-bind="click: submit" value="Who wins?" />
             <p id="winner" />
         </div>
     </div>
-    <script src="../Scripts/app.js"></script>
 </body>
-</html>

@@ -1,5 +1,22 @@
-﻿
-function validateCards(children) {
+﻿var ViewModel = function () {
+    var self = this;
+    self.Play = {
+        Name: ko.observable(),
+        Hand: ko.observableArray()
+    };
+    self.GroupPlay = {
+        Plays: ko.observableArray()
+    };
+    self.player1Name = ko.observable();
+    self.player2Name = ko.observable();
+
+    self.submit = function () {
+        alert(self.player1Name());
+    }
+};
+
+ko.applyBindings(new ViewModel());
+/*function validateCards(children) {
     for (var i = 0; i < children.length; ++i) {
         if (!$(children[i]).val())
             return false;
@@ -46,4 +63,4 @@ function submit() {
             $('#winner').text("Call failed with status: " + err.Message);
         }
     });
-}
+}*/
