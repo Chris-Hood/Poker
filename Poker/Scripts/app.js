@@ -1,5 +1,7 @@
 ﻿var ViewModel = function () {
     var self = this;
+    self.availableCards = ko.observableArray();
+    self.error = ko.observable();
     self.Play = {
         Name: ko.observable(),
         Hand: ko.observableArray()
@@ -13,9 +15,38 @@
     self.submit = function () {
         alert(self.player1Name());
     }
-};
 
-ko.applyBindings(new ViewModel());
+    function ajaxHelper(uri, method, data) {
+        self.error(''); // Clear error message
+        return $.ajax({
+            type: method,
+            dataType: 'json',
+            url: uri,
+            contentType: 'application/json',
+            data: data ? JSON.stringify(data) : null
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            self.error(errorThrown);
+        });
+    }
+
+    function load () {
+        ajaxHelper('/api/Deck', 'GET').done(function (xml) {
+            var cards = [];
+            $(xml).children('Card').each( function (i, elem) {
+                cards.push($(elem).text());
+            });
+            self.availableCards(cards);
+        });
+        
+    }
+
+    load();
+    self.availableCards.valueHasMutated;
+};
+$(document).ready(function () {
+    ko.applyBindings(new ViewModel());
+});
+
 /*function validateCards(children) {
     for (var i = 0; i < children.length; ++i) {
         if (!$(children[i]).val())

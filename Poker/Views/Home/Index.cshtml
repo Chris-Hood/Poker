@@ -7,6 +7,9 @@
     <title>Poker</title>
 </head>
 <body>
+    <!-- ko if:availableCards -->
+    <select data-bind="options: availableCards"></select>
+    <!-- /ko -->
     <div class="box">
         <div>
             <h2>Poker-O-Matic 3000</h2>

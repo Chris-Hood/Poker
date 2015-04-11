@@ -196,12 +196,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\DeckController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PokerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CardParser.cs" />
+    <Compile Include="Models\DeckGenerator.cs" />
     <Compile Include="Models\HandEvaluators.cs" />
     <Compile Include="Models\HandValueComputer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
